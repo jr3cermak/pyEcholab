@@ -640,7 +640,10 @@ class EK80(object):
             #  check if we're reading this channel
             if (not self.read_channel_ids or channel_id in self.read_channel_ids):
                 #  check if we're reading this frequency
-                frequency = config_datagram['configuration'][channel_id]['transducer_frequency']
+                try:
+                    frequency = config_datagram['configuration'][channel_id]['transducer_frequency']
+                except:
+                    frequency = "MISSING"
                 if (self.read_frequencies and frequency not in self.read_frequencies):
                     # There are specific frequencies specified and this
                     # is NOT one of them. Mark the channel for removal from
