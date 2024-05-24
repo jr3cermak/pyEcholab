@@ -4,6 +4,6 @@ jupyter
 notebook
 pytz
 future
-PyQT5
+pyqt5-sip
 basemap
 cartopy
